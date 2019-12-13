@@ -7,6 +7,11 @@ export const MyCard = styled.div`
     border: 1px solid rgba(0,0,0,.125);
     border-radius: .25rem;
     margin: 2%;
+    transition: 0.4s ease;
+
+    &:hover {
+        transform: scale(1.2);
+    }
 `
 export const CardCont = styled.div`
     display: flex;
