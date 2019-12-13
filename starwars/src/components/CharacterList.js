@@ -2,6 +2,12 @@ import React, {useState, useEffect} from "react";
 import axios from "axios";
 import CharacterCard from "./CharacterCard";
 
+const BigDiv = {
+    display: "flex",
+    flexWrap: "wrap",
+    justifyContent: "space-evenly",
+}
+
 export default function CharacterList() {
     const [char, setChar] = useState([]);
 
@@ -19,14 +25,15 @@ export default function CharacterList() {
 
 
     return (
-        <div>
+        <div className="bigDiv" style={BigDiv}>
             {char.map(person => {
                 return (
                     <CharacterCard
                         key={person.id}
                         name={person.name}
                         birth={person.birth_year}
-                        homeworld={person.homeworld}
+                        height={person.height}
+                        mass={person.mass}
                     />
                 );
             })}
